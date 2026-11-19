@@ -120,4 +120,3 @@ Contar os resultados e depois coletá-los realiza dois percursos da subárvore. 
 Em memória, a árvore ocupa **O(N)** para N nós, considerando o alfabeto fixo de 26 letras. Busca e verificação de prefixo usam O(1) de memória auxiliar. A inserção pode criar até O(L) novos nós, e a remoção usa O(L) na pilha de chamadas recursivas.
 
 O autocompletar usa O(P + D + C) de memória, incluindo as respostas. D é a maior quantidade de letras depois do prefixo na subárvore; esse espaço inclui o texto em construção, a pilha recursiva e as palavras retornadas.
-
