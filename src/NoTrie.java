@@ -1,4 +1,3 @@
-// Cada no guarda os caminhos para as proximas letras.
 class NoTrie {
     private final NoTrie[] filhos = new NoTrie[26];
     private boolean fimDaPalavra;

@@ -42,7 +42,6 @@ public class Main {
         verificarPalavras("Autocompletar na arvore vazia", new String[0], trie.autocompletar("ca"));
         verificar("Remover na arvore vazia", false, trie.remover("casa"));
 
-        // Insercao fora de ordem para conferir a ordem alfabetica da listagem.
         trie.inserir("carro");
         trie.inserir("casaco");
         trie.inserir("casa");
@@ -115,31 +114,26 @@ public class Main {
             trie.inserir(palavra);
             throw new AssertionError("A insercao deveria rejeitar: " + palavra);
         } catch (IllegalArgumentException esperado) {
-            // A rejeicao desta entrada e o resultado esperado.
         }
         try {
             trie.buscar(palavra);
             throw new AssertionError("A busca deveria rejeitar: " + palavra);
         } catch (IllegalArgumentException esperado) {
-            // A busca usa a mesma regra de validacao da insercao.
         }
         try {
             trie.existePrefixo(palavra);
             throw new AssertionError("O prefixo deveria rejeitar: " + palavra);
         } catch (IllegalArgumentException esperado) {
-            // Prefixos seguem a mesma regra de entrada.
         }
         try {
             trie.autocompletar(palavra);
             throw new AssertionError("O autocompletar deveria rejeitar: " + palavra);
         } catch (IllegalArgumentException esperado) {
-            // Prefixos vazios tambem sao rejeitados nesta versao.
         }
         try {
             trie.remover(palavra);
             throw new AssertionError("A remocao deveria rejeitar: " + palavra);
         } catch (IllegalArgumentException esperado) {
-            // A remocao valida antes de alterar a arvore.
         }
         System.out.println("OK - Entrada invalida rejeitada em todas as operacoes: " + palavra);
     }
